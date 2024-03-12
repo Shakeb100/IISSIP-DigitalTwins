@@ -5,10 +5,14 @@ export default async function handler(req, res) {
     const { text } = req.body;
 
     try {
+      // Construct the prompt
+      const prompt = `Convert the following text into speech:\n\n${text}`;
+
+      // Send the prompt to the GPT-3 API to generate speech
       const openaiResponse = await axios.post(
         'https://api.openai.com/v1/engines/davinci/completions',
         {
-          prompt: text,
+          prompt: prompt,
           max_tokens: 150,
         },
         {
@@ -19,6 +23,7 @@ export default async function handler(req, res) {
         }
       );
 
+      // Return the generated speech to the client
       res.status(200).json({ speech: openaiResponse.data.choices[0].text });
     } catch (error) {
       console.error('Error generating speech:', error);
@@ -29,5 +34,3 @@ export default async function handler(req, res) {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
-
-  
