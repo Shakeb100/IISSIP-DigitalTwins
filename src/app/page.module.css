@@ -228,3 +228,45 @@
     transform: rotate(0deg);
   }
 }
+/* Add this to your existing page.module.css */
+
+/* ... existing styles ... */
+
+/* Styles for ChatBox */
+.chatBox {
+  width: 100%; /* Full width */
+  max-width: 768px; /* Max width, you can adjust this */
+  margin: 2rem 0; /* Add some margin on top and bottom */
+}
+
+.textArea {
+  width: 100%; /* Full width */
+  min-height: 150px; /* Minimum height */
+  padding: 1rem; /* Padding inside the text area */
+  margin-bottom: 1rem; /* Margin at the bottom */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-family: inherit; /* Inherit font from the body */
+}
+
+.submitButton {
+  padding: 0.5rem 1rem; /* Padding inside the button */
+  background-color: #0070f3; /* Button background color */
+  color: #fff; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  font-size: 1rem; /* Font size */
+  font-family: inherit; /* Inherit font from the body */
+  transition: background-color 0.3s; /* Transition for the background */
+}
+
+.submitButton:hover {
+  background-color: #0056b3; /* Darker background on hover */
+}
+
+/* ... existing media queries ... */
+  /* ... other styles for responsiveness ... */
+
+/* ... existing dark mode styles if necessary ... */
