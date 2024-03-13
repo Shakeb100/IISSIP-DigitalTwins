@@ -11,15 +11,15 @@ export default function Home() {
     console.log(text); // For debugging
     setGeneratedSpeech(text); // Update the state with the generated speech
   };
-  
-  return (
+
+  return ( //figure out a way to make it a downloadable speech. 
     <div>
       <h1>ISSIP Digital Twin</h1>
       <ChatBox onGeneratedSpeech={handleGeneratedSpeech} />
       {generatedSpeech && (
-        <div>
-          <h2>Generated Speech:</h2>
-          <p>{generatedSpeech}</p>
+        <div> 
+          <h2>Generated Speech:</h2> 
+          <p>{generatedSpeech}</p> 
         </div>
       )}
     </div>

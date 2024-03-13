@@ -40,14 +40,6 @@ export default function ChatBox({ onGeneratedSpeech }) {
         />
         <button type="submit">Generate Speech</button>
       </form>
-      
-      {/* Display the generated speech if available */}
-      {generatedSpeech && (
-        <div>
-          <h2>Generated Speech:</h2>
-          <p>{generatedSpeech}</p>
-        </div>
-      )}
-    </div>
+   </div> 
   );
 }
