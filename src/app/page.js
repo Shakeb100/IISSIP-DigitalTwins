@@ -5,14 +5,13 @@ import ChatBox from './ChatBox'; // Adjust this import if needed
 import styles from './page.module.css'; // Ensure this path is correct
 
 export default function Home() {
-  const [generatedSpeech, setGenerationSpeech] = useState('');
+  const [generatedSpeech, setGeneratedSpeech] = useState('');
 
   const handleGeneratedSpeech = (text) => {
-    // Here you handle the submitted text
     console.log(text); // For debugging
-    setSubmittedText(text);
-    // You would also send this to your API endpoint here
+    setGeneratedSpeech(text); // Update the state with the generated speech
   };
+  
   return (
     <div>
       <h1>ISSIP Digital Twin</h1>

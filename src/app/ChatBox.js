@@ -1,41 +1,53 @@
-// app/ChatBox.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './ChatBox.module.css';
 
 export default function ChatBox({ onGeneratedSpeech }) {
-  const [document, setDocument] = useState('');
+  const [textContent, setTextContent] = useState(''); // Renamed from 'document'
+  const [generatedSpeech, setGeneratedSpeech] = useState('');
 
   const handleDocumentChange = (event) => {
-    setDocument(event.target.value);
+    setTextContent(event.target.value);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('/api/generate-speech', { text: document });
-      onGeneratedSpeech(response.data.speech); // Call the prop with the generated speech
+      const response = await axios.post('/api/generate-speech', { text: textContent });
+      const speech = response.data.speech;
+      
+      // Update the state with the generated speech
+      setGeneratedSpeech(speech);
+
+      // Pass the generated speech back to the parent component if needed
+      if (onGeneratedSpeech) {
+        onGeneratedSpeech(speech);
+      }
     } catch (error) {
       console.error('Error generating speech:', error);
-      // Optionally handle the error here, e.g., by setting an error state
+      // Optionally handle the error here, e.g., show a message to the user
     }
   };
 
   return (
-    <div className={styles.chatBox}>
+    <div>
       <form onSubmit={handleSubmit}>
         <textarea
-          className={styles.textArea}
-          placeholder="Paste your document here..."
-          value={document}
+          placeholder="Paste your text here..."
+          value={textContent}
           onChange={handleDocumentChange}
         />
-        <button className={styles.submitButton} type="submit">
-          Convert to Speech
-        </button>
+        <button type="submit">Generate Speech</button>
       </form>
+      
+      {/* Display the generated speech if available */}
+      {generatedSpeech && (
+        <div>
+          <h2>Generated Speech:</h2>
+          <p>{generatedSpeech}</p>
+        </div>
+      )}
     </div>
   );
 }
-
