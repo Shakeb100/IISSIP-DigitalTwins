@@ -14,7 +14,7 @@ export default function Home() {
 
   return ( //figure out a way to make it a downloadable speech. 
     <div>
-      <h1>ISSIP Digital Twin</h1>
+      <h1 className='center'>ISSIP Digital Twin</h1>
       <ChatBox onGeneratedSpeech={handleGeneratedSpeech} />
       {generatedSpeech && (
         <div> 
