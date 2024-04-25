@@ -33,11 +33,13 @@ export default function ChatBox({ onGeneratedSpeech }) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <textarea
-          placeholder="Paste your text here..."
-          value={textContent}
-          onChange={handleDocumentChange}
-        />
+      <textarea
+  placeholder="Paste your text here..."
+  value={textContent}
+  onChange={handleDocumentChange}
+  style={{ padding: '10 px', width: '300px', height: '80px' }} // Adjust the height as needed
+/>
+
         <button type="submit">Generate Speech</button>
       </form>
    </div> 

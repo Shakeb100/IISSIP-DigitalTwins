@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-const generatedText = "The text you want the digital person to say";
-
 // The URL to the image of the person you want to animate
 const sourceImageUrl = "https://myhost.com/image.jpg";
 

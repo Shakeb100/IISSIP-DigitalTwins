@@ -1,26 +1,153 @@
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* General reset for margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Apply flexbox layout to center all content */
+html, body {
+  height: 100vh; /* Full height of the viewport */
+  display: flex; /* Establishes a flex container */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  flex-direction: column; /* Stack children vertically */
+  font-family: 'Arial', sans-serif; /* Clean, widely used font */
+  color: #333; /* Dark grey text for readability */
+  background-color: #eef3f7; /* Light grey background as seen in the screenshot */
+  line-height: 1.6; /* Spacing for line height */
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Ensure the header is full width */
+header {
+  background: linear-gradient(to right, #0252a1, #30acff); /* Blue gradient background */ 
+  color: white; /* White text color */
+  padding: 3rem; /* Increase the padding to make the banner larger */
+  text-align: center; /* Center the text */
+  width: 100vw; /* Ensure the banner spans the full width of the viewport */
+  position: absolute; /* Position it absolutely to ensure it's at the top */
+  top: 0; /* Align the top of the banner with the top of the viewport */
+  left: 0; /* Align the left of the banner with the left of the viewport */
+  font-size: 1.7rem; /* Adjust font size if needed */
+  z-index: 1000; /* Ensure it's above other content */
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+
+footer {
+  background-color: #0077cc; /* Blue background color */
+  color: white; /* White text color */
+  padding: 3rem; /* Increase the padding to make the banner larger */
+  text-align: center; /* Center the text */
+  width: 100vw; /* Ensure the banner spans the full width of the viewport */
+  position: absolute; /* Position it absolutely to ensure it's at the top */
+  top: 0; /* Align the top of the banner with the top of the viewport */
+  left: 0; /* Align the left of the banner with the left of the viewport */
+  font-size: 1.25rem; /* Adjust font size if needed */
+  z-index: 1000; /* Ensure it's above other content */ 
 }
+
+/* Centered main heading */
+h1 {
+  font-size: 2.5rem; /* Large font size for the main heading */
+  margin-bottom: 1rem; /* Spacing after heading */
+}
+
+/* Centered subheading */
+h2 {
+  font-size: 2rem; /* Large font size for subheadings */
+  color: #333; /* Dark grey color for subheadings */
+  margin-bottom: 0.5rem; /* Spacing after subheading */
+}
+
+/* Button styling */
+
+
+Button {
+  background-color: #ffcc00; /* Bright, attention-grabbing color */
+  color: #333; /* High contrast text color for readability */
+  border: none; /* No border for a clean look */
+  border-radius: 20px; /* Fully rounded edges */
+  padding: 1rem 2rem; /* Horizontal padding is larger for a button-like appearance */
+  font-size: 1.2rem; /* Slightly larger text for importance */
+  font-weight: bold; /* Bold text for legibility */
+  cursor: pointer; /* Changes the cursor to indicate the button is clickable */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for effects */
+  margin: 0 auto; /* Centers the button */
+  display: block; /* Ensures the button is a block element to respect the margin */
+}
+
+Button:hover {
+  background-color: #ffd700; /* A slightly different color on hover for visual feedback */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a 'lifted' effect */
+}
+
+
+/* Center content within each section */
+section {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center; /* Center text */
+  padding: 2rem; /* Padding around sections */
+  width: 100%; /* Full width */
+}
+
+/* Responsive images within sections */
+section img {
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+/* Footer styling */
+footer {
+  width: 100%; /* Full width */
+  background-color: #333; /* Dark footer background */
+  color: white; /* White text color */
+  text-align: center; /* Center align text */
+  padding: 1rem 0; /* Padding for top and bottom */
+}
+/* ... existing styles ... */
+
+.blueHeader {
+  background-color: #0077cc; /* Blue background color */
+  color: white; /* White text color */
+  padding: 2rem; /* Increase the padding to make the banner larger */
+  text-align: center; /* Center the text */
+  width: 100vw; /* Ensure the banner spans the full width of the viewport */
+  position: absolute; /* Position it absolutely to ensure it's at the top */
+  top: 0; /* Align the top of the banner with the top of the viewport */
+  left: 0; /* Align the left of the banner with the left of the viewport */
+  font-size: 1.25rem; /* Adjust font size if needed */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+
+.ctaButton {
+  /* Styles for the CTA button */
+  background-color: #ffc107; /* Yellow background for buttons */
+  color: #333; /* Dark text for buttons for readability */
+  padding: 0.75rem 1.5rem; /* Padding inside the button */
+  border: none; /* No border for a modern look */
+  border-radius: 5px; /* Rounded corners for the button */
+  cursor: pointer; /* Cursor change to signify clickable button */
+  font-size: 1rem; /* Font size for text in the button */
+  text-transform: uppercase; /* Uppercase text for the button */
+  transition: background-color 0.3s; /* Transition for a hover effect */
+  margin-top: 1rem; /* Space between the text and button */
+}
+
+.ctaButton:hover {
+  background-color: #ffca28; /* Lighten the button color on hover */
+}
+
+.center {
+  /* Correct the .center class for centering h1 */
+  text-align: center; /* Center text */
+  width: 100%; /* Full width */
+}
+
+/* ... other styles ... */
